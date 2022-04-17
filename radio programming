@@ -1,0 +1,17 @@
+<mat-label *ngIf="label">
+  {{ label }}
+  <strong *ngIf="required">*</strong>
+</mat-label>
+<mat-form-field appearance="outline">
+  <input
+    matInput
+    type="text"
+    (change)="handleOnChange($event)"
+    [value]="value"
+    autocomplete="{{ autoComplete }}"
+    required="{{ required }}"
+    readonly="{{ readOnly }}"
+    placeholder="{{ placeholder }}"
+  />
+</mat-form-field>
+<mat-error *ngIf="errorMessages">{{ errorMessages }}</mat-error>
